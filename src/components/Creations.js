@@ -32,9 +32,19 @@ const HeaderContainer = styled.div`
   width: 100%;
 `;
 
-const Heading = styled.h2``;
+const Heading = styled.h2`
+  color: var(--Black);
+  font-family: var(--heading-font);
+`;
 
-const Btn = styled.button``;
+const Btn = styled.button`
+  all: unset;
+  box-sizing: border-box;
+  user-select: none;
+  background-color: var(--Black);
+  color: var(--White);
+  font-family: var(--heading-font);
+`;
 
 const GridContainer = styled.div`
   display: grid;
@@ -42,49 +52,63 @@ const GridContainer = styled.div`
   width: 100%;
 `;
 
-const Img = styled.img``;
+const Creation = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+  min-height: 40vw;
+  background: url(${(props) => props.bg});
+  background-size: cover;
+  background-position: center;
+`;
+
+const Caption = styled.p`
+  color: var(--White);
+  font-family: var(--heading-font);
+`;
 
 const Creations = () => {
-  const imgs = [
+  const creations = [
     {
+      caption: "DEEP EARTH",
       desktopSrc: earthImgDesktop,
-      mobile: earthImgMobile,
-      alt: "deep-earth",
+      mobileSrc: earthImgMobile,
     },
     {
+      caption: "NIGHT ARCADE",
       desktopSrc: arcadeImgDesktop,
-      mobile: arcadeImgMobile,
-      alt: "night-arcade",
+      mobileSrc: arcadeImgMobile,
     },
     {
+      caption: "TEAM SOCCER",
       desktopSrc: soccerImgDesktop,
-      mobile: soccerImgMobile,
-      alt: "team-soccer",
+      mobileSrc: soccerImgMobile,
     },
     {
+      caption: "THE GRID",
       desktopSrc: gridImgDesktop,
-      mobile: gridImgMobile,
-      alt: "the-grid",
+      mobileSrc: gridImgMobile,
     },
     {
+      caption: "FROM UP ABOVE VR",
       desktopSrc: aboveImgDesktop,
-      mobile: aboveImgMobile,
-      alt: "from-up-above-vr",
+      mobileSrc: aboveImgMobile,
     },
     {
+      caption: "POCKET BOREALIS",
       desktopSrc: pocketImgDesktop,
-      mobile: pocketImgMobile,
-      alt: "pocket-borealis",
+      mobileSrc: pocketImgMobile,
     },
     {
+      caption: "THE CURIOSITY",
       desktopSrc: curiosityImgDesktop,
-      mobile: curiosityImgMobile,
-      alt: "the-curiosity",
+      mobileSrc: curiosityImgMobile,
     },
     {
+      caption: "MAKE IT FISHEYE",
       desktopSrc: fisheyeImgDesktop,
-      mobile: fisheyeImgMobile,
-      alt: "make-it-fisheye",
+      mobileSrc: fisheyeImgMobile,
     },
   ];
 
@@ -97,8 +121,10 @@ const Creations = () => {
         <Btn>SEE ALL</Btn>
       </HeaderContainer>
       <GridContainer>
-        {imgs.map((img) => (
-          <Img key={key++} src={img.desktopSrc} alt={img.alt} />
+        {creations.map((creation) => (
+          <Creation key={key++} bg={creation.desktopSrc}>
+            <Caption>{creation.caption}</Caption>
+          </Creation>
         ))}
       </GridContainer>
     </Container>

@@ -10,7 +10,11 @@ const Links = styled.div`
   align-items: center;
 `;
 
-const Link = styled.p``;
+const Link = styled.p`
+  user-select: none;
+  color: var(--White);
+  font-family: var(--body-font);
+`;
 
 const UnstyledNavMenu = ({ className }) => {
   const links = ["About", "Careers", "Events", "Products", "Support"];

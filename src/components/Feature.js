@@ -19,9 +19,15 @@ const TextContainer = styled.div`
   align-items: flex-start;
 `;
 
-const Heading = styled.h1``;
+const Heading = styled.h1`
+  color: var(--Black);
+  font-family: var(--heading-font);
+`;
 
-const Paragraph = styled.p``;
+const Paragraph = styled.p`
+  color: var(--Dark-Gray);
+  font-family: var(--body-font);
+`;
 
 const Feature = () => {
   return (

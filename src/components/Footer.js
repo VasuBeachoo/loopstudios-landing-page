@@ -11,6 +11,7 @@ const FooterContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  background-color: var(--Black);
 `;
 
 const FooterNavMenu = styled(NavMenu)`
@@ -30,7 +31,10 @@ const SocialIcons = styled.div``;
 
 const Icon = styled.img``;
 
-const Copyright = styled.p``;
+const Copyright = styled.p`
+  color: var(--Very-Dark-Gray);
+  font-family: var(--body-font);
+`;
 
 const Footer = () => {
   const icons = [
