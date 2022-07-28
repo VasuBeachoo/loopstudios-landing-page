@@ -13,7 +13,7 @@ const Container = styled.div`
     url(${introBgDesktop});
   background-size: cover;
   background-position: center;
-  padding: 2.65rem var(--side-padding);
+  padding: 3.65rem var(--side-padding);
 `;
 
 const Heading = styled.h1`

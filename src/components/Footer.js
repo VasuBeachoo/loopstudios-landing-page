@@ -12,13 +12,15 @@ const FooterContainer = styled.div`
   align-items: center;
   width: 100%;
   background-color: var(--Black);
-  padding: 0 var(--side-padding);
+  padding: 3rem var(--side-padding);
 `;
 
 const FooterNavMenu = styled(NavMenu)`
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  gap: 1.15rem;
+  width: auto;
 `;
 
 const Container = styled.div`
@@ -26,15 +28,34 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-end;
+  gap: 0.65rem;
 `;
 
-const SocialIcons = styled.div``;
+const SocialIcons = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1.1rem;
+`;
 
-const Icon = styled.img``;
+const Icon = styled.img`
+  width: 1.4rem;
+  border-bottom: 0.1rem solid var(--Black);
+  padding-bottom: 0.5rem;
+  transition: 0.25s;
+
+  &:hover {
+    cursor: pointer;
+    border-color: var(--White);
+  }
+`;
 
 const Copyright = styled.p`
   color: var(--Very-Dark-Gray);
   font-family: var(--body-font);
+  font-size: 0.9rem;
+  margin: 0;
 `;
 
 const Footer = () => {

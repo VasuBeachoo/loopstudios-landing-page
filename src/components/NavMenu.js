@@ -18,6 +18,7 @@ const Link = styled.p`
   user-select: none;
   color: var(--White);
   font-family: var(--body-font);
+  margin: 0;
   transition: 0.2s;
 
   &:hover {
