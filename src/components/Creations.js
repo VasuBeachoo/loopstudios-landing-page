@@ -22,7 +22,7 @@ const Container = styled.div`
   justify-content: flex-start;
   align-items: center;
   width: 100%;
-  padding: 0 var(--side-padding);
+  padding: 0 var(--side-padding) 10rem;
 `;
 
 const HeaderContainer = styled.div`
@@ -31,26 +31,49 @@ const HeaderContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  margin: 0 0 3.5rem 0;
 `;
 
 const Heading = styled.h2`
   color: var(--Black);
   font-family: var(--heading-font);
+  font-size: 2rem;
+  margin: 0;
 `;
 
 const Btn = styled.button`
   all: unset;
   box-sizing: border-box;
   user-select: none;
-  background-color: var(--Black);
-  color: var(--White);
+  text-align: center;
+  color: var(--Black);
   font-family: var(--heading-font);
+  border: 0.1rem solid var(--Black);
+  padding: 0.75rem 2rem;
+  transition: 0.25s;
+
+  &:hover {
+    cursor: pointer;
+    background-color: var(--Black);
+    color: var(--White);
+  }
 `;
 
 const GridContainer = styled.div`
   display: grid;
   grid-template: repeat(2, 1fr) / repeat(4, 1fr);
+  gap: 1rem;
   width: 100%;
+`;
+
+const Caption = styled.p`
+  color: var(--White);
+  font-family: var(--heading-font);
+  font-size: 1.8rem;
+  max-width: 10rem;
+  line-height: 2rem;
+  margin: 0;
+  transition: 0.25s;
 `;
 
 const Creation = styled.div`
@@ -58,15 +81,27 @@ const Creation = styled.div`
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-end;
-  min-height: 40vw;
-  background: url(${(props) => props.bg});
+  min-height: 35vw;
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6)),
+    url(${(props) => props.bg});
   background-size: cover;
   background-position: center;
-`;
+  padding: 2rem;
+  transition: 0.25s;
 
-const Caption = styled.p`
-  color: var(--White);
-  font-family: var(--heading-font);
+  &:hover {
+    cursor: pointer;
+    background: linear-gradient(
+        rgba(255, 255, 255, 0.5),
+        rgba(255, 255, 255, 1)
+      ),
+      url(${(props) => props.bg});
+    background-size: cover;
+
+    ${Caption} {
+      color: var(--Black);
+    }
+  }
 `;
 
 const Creations = () => {
@@ -82,7 +117,7 @@ const Creations = () => {
       mobileSrc: arcadeImgMobile,
     },
     {
-      caption: "TEAM SOCCER",
+      caption: "SOCCER TEAM VR",
       desktopSrc: soccerImgDesktop,
       mobileSrc: soccerImgMobile,
     },
