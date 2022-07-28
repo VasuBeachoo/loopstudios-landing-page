@@ -13,6 +13,13 @@ const FooterContainer = styled.div`
   width: 100%;
   background-color: var(--Black);
   padding: 3rem var(--side-padding);
+
+  @media (max-width: 1000px) {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2.5rem;
+  }
 `;
 
 const FooterNavMenu = styled(NavMenu)`
@@ -21,6 +28,18 @@ const FooterNavMenu = styled(NavMenu)`
   align-items: flex-start;
   gap: 1.15rem;
   width: auto;
+
+  @media (max-width: 1000px) {
+    align-items: center;
+    gap: 1.75rem;
+
+    div {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      text-align: center;
+    }
+  }
 `;
 
 const Container = styled.div`
@@ -29,6 +48,11 @@ const Container = styled.div`
   justify-content: flex-start;
   align-items: flex-end;
   gap: 0.65rem;
+
+  @media (max-width: 1000px) {
+    align-items: center;
+    text-align: center;
+  }
 `;
 
 const SocialIcons = styled.div`
@@ -52,10 +76,11 @@ const Icon = styled.img`
 `;
 
 const Copyright = styled.p`
+  text-align: right;
   color: var(--Very-Dark-Gray);
   font-family: var(--body-font);
   font-size: 0.9rem;
-  margin: 0;
+  margin: 0 0 0 1rem;
 `;
 
 const Footer = () => {

@@ -10,10 +10,23 @@ const Container = styled.div`
   align-items: flex-end;
   width: 100%;
   padding: 9rem var(--side-padding) 7.5rem;
+
+  @media (max-width: 1000px) {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
 `;
 
 const Img = styled.img`
-  width: 42rem;
+  width: 50vw;
+
+  @media (max-width: 1000px) {
+    width: 75vw;
+  }
 `;
 
 const TextContainer = styled.div`
@@ -27,6 +40,11 @@ const TextContainer = styled.div`
   background-color: var(--White);
   padding: 5rem 5rem 0;
   z-index: 2;
+
+  @media (max-width: 1000px) {
+    position: static;
+    padding: 5rem 1rem 0;
+  }
 `;
 
 const Heading = styled.h1`

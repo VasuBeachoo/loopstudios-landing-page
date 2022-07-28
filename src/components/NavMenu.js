@@ -18,6 +18,7 @@ const Link = styled.p`
   user-select: none;
   color: var(--White);
   font-family: var(--body-font);
+  font-size: clamp(1rem, 0.5vw, 2rem);
   margin: 0;
   transition: 0.2s;
 

@@ -37,7 +37,7 @@ const HeaderContainer = styled.div`
 const Heading = styled.h2`
   color: var(--Black);
   font-family: var(--heading-font);
-  font-size: 2rem;
+  font-size: clamp(1rem, 5vw, 1.75rem);
   margin: 0;
 `;
 
@@ -61,7 +61,7 @@ const Btn = styled.button`
 
 const GridContainer = styled.div`
   display: grid;
-  grid-template: repeat(2, 1fr) / repeat(4, 1fr);
+  grid-template: auto / repeat(4, 1fr);
   gap: 1rem;
   width: 100%;
 `;
@@ -69,7 +69,7 @@ const GridContainer = styled.div`
 const Caption = styled.p`
   color: var(--White);
   font-family: var(--heading-font);
-  font-size: 1.8rem;
+  font-size: clamp(1rem, 5vw, 1.75rem);
   max-width: 10rem;
   line-height: 2rem;
   margin: 0;
@@ -77,6 +77,7 @@ const Caption = styled.p`
 `;
 
 const Creation = styled.div`
+  grid-area: auto / auto / span 1 / span 1;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -101,6 +102,10 @@ const Creation = styled.div`
     ${Caption} {
       color: var(--Black);
     }
+  }
+
+  @media (max-width: 1000px) {
+    grid-area: auto / auto / span 1 / span 4;
   }
 `;
 

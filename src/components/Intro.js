@@ -16,10 +16,20 @@ const Container = styled.div`
   padding: 3.65rem var(--side-padding);
 `;
 
+const IntroNavMenu = styled(NavMenu)`
+  display: flex;
+
+  @media (max-width: 1000px) {
+    div {
+      display: none;
+    }
+  }
+`;
+
 const Heading = styled.h1`
   color: var(--White);
   font-family: var(--heading-font);
-  font-size: 3.25rem;
+  font-size: clamp(2rem, 5vw, 3.25rem);
   letter-spacing: 0.2rem;
   line-height: 4.6rem;
   max-width: 35rem;
@@ -31,7 +41,7 @@ const Heading = styled.h1`
 const Intro = () => {
   return (
     <Container>
-      <NavMenu />
+      <IntroNavMenu />
       <Heading>IMMERSIVE EXPERIENCES THAT DELIVER</Heading>
     </Container>
   );
