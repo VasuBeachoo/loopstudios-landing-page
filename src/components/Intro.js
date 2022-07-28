@@ -13,12 +13,19 @@ const Container = styled.div`
     url(${introBgDesktop});
   background-size: cover;
   background-position: center;
-  padding: 2.5rem var(--side-padding);
+  padding: 2.65rem var(--side-padding);
 `;
 
 const Heading = styled.h1`
   color: var(--White);
   font-family: var(--heading-font);
+  font-size: 3.25rem;
+  line-height: 4.6rem;
+  letter-spacing: 0.2rem;
+  max-width: 35rem;
+  border: 0.4rem solid var(--White);
+  padding: 2.25rem;
+  margin: 7.5rem 0 0 0;
 `;
 
 const Intro = () => {
