@@ -3,31 +3,48 @@ import interactiveImgDesktop from "../assets/desktop/image-interactive.jpg";
 import interactiveImgMobile from "../assets/mobile/image-interactive.jpg";
 
 const Container = styled.div`
+  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-end;
   width: 100%;
-  padding: 0 var(--side-padding);
+  padding: 9rem var(--side-padding) 7.5rem;
 `;
 
-const Img = styled.img``;
+const Img = styled.img`
+  width: 42rem;
+`;
 
 const TextContainer = styled.div`
+  position: absolute;
+  left: 50vw;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  max-width: 35rem;
+  background-color: var(--White);
+  padding: 5rem 5rem 0;
+  z-index: 2;
 `;
 
 const Heading = styled.h1`
   color: var(--Black);
   font-family: var(--heading-font);
+  font-size: 2rem;
+  letter-spacing: 0.1rem;
+  line-height: 2.75rem;
+  margin: 0;
 `;
 
 const Paragraph = styled.p`
   color: var(--Dark-Gray);
   font-family: var(--body-font);
+  font-size: 1rem;
+  letter-spacing: 0.025rem;
+  line-height: 1.85rem;
+  margin: 1rem 0 0 0;
 `;
 
 const Feature = () => {

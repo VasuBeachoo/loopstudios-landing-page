@@ -20,8 +20,8 @@ const Heading = styled.h1`
   color: var(--White);
   font-family: var(--heading-font);
   font-size: 3.25rem;
-  line-height: 4.6rem;
   letter-spacing: 0.2rem;
+  line-height: 4.6rem;
   max-width: 35rem;
   border: 0.4rem solid var(--White);
   padding: 2.25rem;
