@@ -11,6 +11,8 @@ const GlobalStyle = styled.createGlobalStyle`
 
     --heading-font: "Josefin Sans", sans-serif;
     --body-font: "Alata", sans-serif;
+
+    --side-padding: 8rem;
   }
 
   * {

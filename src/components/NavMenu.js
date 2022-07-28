@@ -1,19 +1,30 @@
 import styled from "styled-components";
 import logo from "../assets/logo.svg";
 
-const Logo = styled.img``;
+const Logo = styled.img`
+  width: 10rem;
+`;
 
 const Links = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  gap: 2rem;
+  font-size: 1rem;
 `;
 
 const Link = styled.p`
   user-select: none;
   color: var(--White);
   font-family: var(--body-font);
+  transition: 0.2s;
+
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 0.5rem;
+  }
 `;
 
 const UnstyledNavMenu = ({ className }) => {

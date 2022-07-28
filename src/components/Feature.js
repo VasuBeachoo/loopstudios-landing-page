@@ -8,6 +8,7 @@ const Container = styled.div`
   justify-content: flex-start;
   align-items: flex-end;
   width: 100%;
+  padding: 0 var(--side-padding);
 `;
 
 const Img = styled.img``;

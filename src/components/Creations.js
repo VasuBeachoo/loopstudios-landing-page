@@ -22,6 +22,7 @@ const Container = styled.div`
   justify-content: flex-start;
   align-items: center;
   width: 100%;
+  padding: 0 var(--side-padding);
 `;
 
 const HeaderContainer = styled.div`

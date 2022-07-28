@@ -12,6 +12,7 @@ const FooterContainer = styled.div`
   align-items: center;
   width: 100%;
   background-color: var(--Black);
+  padding: 0 var(--side-padding);
 `;
 
 const FooterNavMenu = styled(NavMenu)`
