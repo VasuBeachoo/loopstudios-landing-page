@@ -2,11 +2,22 @@ import styled from "styled-components";
 import interactiveImgDesktop from "../assets/desktop/image-interactive.jpg";
 import interactiveImgMobile from "../assets/mobile/image-interactive.jpg";
 
-const Container = styled.div``;
+const Container = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+  width: 100%;
+`;
 
 const Img = styled.img``;
 
-const TextContainer = styled.div``;
+const TextContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+`;
 
 const Heading = styled.h1``;
 

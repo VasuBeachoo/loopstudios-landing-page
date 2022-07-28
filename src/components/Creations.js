@@ -6,7 +6,7 @@ import gridImgDesktop from "../assets/desktop/image-grid.jpg";
 import aboveImgDesktop from "../assets/desktop/image-from-above.jpg";
 import pocketImgDesktop from "../assets/desktop/image-pocket-borealis.jpg";
 import curiosityImgDesktop from "../assets/desktop/image-curiosity.jpg";
-import fisheyeImgDesktop from "../assets/mobile/image-fisheye.jpg";
+import fisheyeImgDesktop from "../assets/desktop/image-fisheye.jpg";
 import earthImgMobile from "../assets/mobile/image-deep-earth.jpg";
 import arcadeImgMobile from "../assets/mobile/image-night-arcade.jpg";
 import soccerImgMobile from "../assets/mobile/image-soccer-team.jpg";
@@ -16,15 +16,31 @@ import pocketImgMobile from "../assets/mobile/image-pocket-borealis.jpg";
 import curiosityImgMobile from "../assets/mobile/image-curiosity.jpg";
 import fisheyeImgMobile from "../assets/mobile/image-fisheye.jpg";
 
-const Container = styled.div``;
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+`;
 
-const HeaderContainer = styled.div``;
+const HeaderContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+`;
 
 const Heading = styled.h2``;
 
 const Btn = styled.button``;
 
-const GridContainer = styled.div``;
+const GridContainer = styled.div`
+  display: grid;
+  grid-template: repeat(2, 1fr) / repeat(4, 1fr);
+  width: 100%;
+`;
 
 const Img = styled.img``;
 
@@ -72,6 +88,8 @@ const Creations = () => {
     },
   ];
 
+  let key = 0;
+
   return (
     <Container>
       <HeaderContainer>
@@ -80,7 +98,7 @@ const Creations = () => {
       </HeaderContainer>
       <GridContainer>
         {imgs.map((img) => (
-          <Img src={img.desktopSrc} alt={img.alt} />
+          <Img key={key++} src={img.desktopSrc} alt={img.alt} />
         ))}
       </GridContainer>
     </Container>

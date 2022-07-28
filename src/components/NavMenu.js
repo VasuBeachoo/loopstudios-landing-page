@@ -1,30 +1,40 @@
 import styled from "styled-components";
 import logo from "../assets/logo.svg";
 
-const Container = styled.div``;
-
 const Logo = styled.img``;
 
-const Links = styled.div``;
+const Links = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+`;
 
 const Link = styled.p``;
 
-const UnstyledNavMenu = () => {
+const UnstyledNavMenu = ({ className }) => {
   const links = ["About", "Careers", "Events", "Products", "Support"];
+
   let key = 0;
 
   return (
-    <Container>
-      <Logo src={logo} alt="logo" />;
+    <div className={className}>
+      <Logo src={logo} alt="logo" />
       <Links>
         {links.map((link) => (
           <Link key={key++}>{link}</Link>
         ))}
       </Links>
-    </Container>
+    </div>
   );
 };
 
-const NavMenu = styled(UnstyledNavMenu)``;
+const NavMenu = styled(UnstyledNavMenu)`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+`;
 
 export default NavMenu;

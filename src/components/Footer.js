@@ -5,9 +5,26 @@ import iconTwitter from "../assets/icon-twitter.svg";
 import iconPinterest from "../assets/icon-pinterest.svg";
 import iconInstagram from "../assets/icon-instagram.svg";
 
-const FooterContainer = styled.div``;
+const FooterContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+`;
 
-const Container = styled.div``;
+const FooterNavMenu = styled(NavMenu)`
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+`;
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+`;
 
 const SocialIcons = styled.div``;
 
@@ -23,13 +40,15 @@ const Footer = () => {
     { src: iconInstagram, alt: "instagram" },
   ];
 
+  let key = 0;
+
   return (
     <FooterContainer>
-      <NavMenu />
+      <FooterNavMenu />
       <Container>
         <SocialIcons>
           {icons.map((icon) => (
-            <Icon src={icon.src} alt={icon.alt} />
+            <Icon key={key++} src={icon.src} alt={icon.alt} />
           ))}
         </SocialIcons>
         <Copyright>&copy; 2021 Loopstudios. All rights reserved.</Copyright>
