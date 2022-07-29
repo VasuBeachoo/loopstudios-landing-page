@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import styled from "styled-components";
 import GlobalStyle from "./GlobalStyle";
 import Intro from "./components/Intro";
@@ -14,12 +15,30 @@ const AppContainer = styled.div`
 `;
 
 const App = () => {
+  const [mobile, setMobile] = useState(false);
+  const [menu, setMenu] = useState(false);
+
+  function handleResize() {
+    if (window.innerWidth <= 1000) {
+      setMobile(true);
+    } else {
+      setMenu(false);
+      setMobile(false);
+    }
+  }
+
+  useEffect(() => {
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  });
+
   return (
     <AppContainer>
       <GlobalStyle />
-      <Intro />
+      <Intro menu={menu} setMenu={setMenu} />
       <Feature />
-      <Creations />
+      <Creations mobile={mobile} />
       <Footer />
     </AppContainer>
   );

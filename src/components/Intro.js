@@ -1,8 +1,9 @@
 import styled from "styled-components";
-import NavMenu from "./NavMenu";
+import NavMenu, { Logo, MenuIcon } from "./NavMenu";
 import introBgDesktop from "../assets/desktop/image-hero.jpg";
 
 const Container = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -23,6 +24,12 @@ const IntroNavMenu = styled(NavMenu)`
     div {
       display: none;
     }
+
+    ${MenuIcon} {
+      @media (max-width: 1000px) {
+        display: block;
+      }
+    }
   }
 `;
 
@@ -38,11 +45,38 @@ const Heading = styled.h1`
   margin: 7.5rem 0 0 0;
 `;
 
-const Intro = () => {
+const MobileNavMenu = styled(NavMenu)`
+  position: absolute;
+  top: 7.5rem;
+  left: 0;
+  right: 0;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  width: 90%;
+  background-color: var(--Black);
+  padding: 2rem;
+  margin: 0 auto;
+
+  ${Logo} {
+    display: none;
+  }
+
+  div {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1.25rem;
+  }
+`;
+
+const Intro = ({ menu, setMenu }) => {
   return (
     <Container>
-      <IntroNavMenu />
+      <IntroNavMenu menu={menu} setMenu={setMenu} />
       <Heading>IMMERSIVE EXPERIENCES THAT DELIVER</Heading>
+      {menu && <MobileNavMenu />}
     </Container>
   );
 };

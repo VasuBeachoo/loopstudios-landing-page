@@ -1,7 +1,9 @@
 import styled from "styled-components";
 import logo from "../assets/logo.svg";
+import menuOpenIcon from "../assets/icon-hamburger.svg";
+import menuCloseIcon from "../assets/icon-close.svg";
 
-const Logo = styled.img`
+export const Logo = styled.img`
   width: 10rem;
 `;
 
@@ -29,7 +31,16 @@ const Link = styled.p`
   }
 `;
 
-const UnstyledNavMenu = ({ className }) => {
+export const MenuIcon = styled.img`
+  display: none;
+  transition: 0.2s;
+
+  :hover {
+    cursor: pointer;
+  }
+`;
+
+const UnstyledNavMenu = ({ className, menu, setMenu }) => {
   const links = ["About", "Careers", "Events", "Products", "Support"];
 
   let key = 0;
@@ -42,6 +53,11 @@ const UnstyledNavMenu = ({ className }) => {
           <Link key={key++}>{link}</Link>
         ))}
       </Links>
+      <MenuIcon
+        src={menu ? menuCloseIcon : menuOpenIcon}
+        alt={menu ? "x-icon" : "hamburger-icon"}
+        onClick={() => setMenu(!menu)}
+      />
     </div>
   );
 };

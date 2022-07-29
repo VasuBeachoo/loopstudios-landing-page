@@ -23,6 +23,10 @@ const Container = styled.div`
   align-items: center;
   width: 100%;
   padding: 0 var(--side-padding) 10rem;
+
+  @media (max-width: 1000px) {
+    padding-bottom: 5rem;
+  }
 `;
 
 const HeaderContainer = styled.div`
@@ -32,6 +36,11 @@ const HeaderContainer = styled.div`
   align-items: center;
   width: 100%;
   margin: 0 0 3.5rem 0;
+
+  @media (max-width: 1000px) {
+    justify-content: center;
+    text-align: center;
+  }
 `;
 
 const Heading = styled.h2`
@@ -51,11 +60,16 @@ const Btn = styled.button`
   border: 0.1rem solid var(--Black);
   padding: 0.75rem 2rem;
   transition: 0.25s;
+  margin: 0;
 
   &:hover {
     cursor: pointer;
     background-color: var(--Black);
     color: var(--White);
+  }
+
+  @media (max-width: 1000px) {
+    margin: 3rem 0 0 0;
   }
 `;
 
@@ -109,7 +123,7 @@ const Creation = styled.div`
   }
 `;
 
-const Creations = () => {
+const Creations = ({ mobile }) => {
   const creations = [
     {
       caption: "DEEP EARTH",
@@ -159,15 +173,19 @@ const Creations = () => {
     <Container>
       <HeaderContainer>
         <Heading>OUR CREATIONS</Heading>
-        <Btn>SEE ALL</Btn>
+        {!mobile && <Btn>SEE ALL</Btn>}
       </HeaderContainer>
       <GridContainer>
         {creations.map((creation) => (
-          <Creation key={key++} bg={creation.desktopSrc}>
+          <Creation
+            key={key++}
+            bg={mobile ? creation.mobileSrc : creation.desktopSrc}
+          >
             <Caption>{creation.caption}</Caption>
           </Creation>
         ))}
       </GridContainer>
+      {mobile && <Btn>SEE ALL</Btn>}
     </Container>
   );
 };
